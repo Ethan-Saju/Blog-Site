@@ -1,0 +1,63 @@
+body {
+  background-color: #758694;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.website {
+  width: 100%;
+}
+.website a {
+  text-decoration: none;
+}
+.website h1 {
+  font-family: "Cedarville Cursive", cursive;
+  color: white;
+  font-size: 2rem;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.form {
+  margin-top: 20px;
+  width: 100%;
+  margin-left: 15%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-option {
+  width: 75%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-option label {
+  font-size: larger;
+  color: white;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+textarea {
+  font-size: 24px;
+}
+
+#publish {
+  margin-top: 5px;
+  font-size: 18px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: 0;
+  color: white;
+  background-color: #405d72;
+}
+
+#publish:hover {
+  opacity: 90%;
+}

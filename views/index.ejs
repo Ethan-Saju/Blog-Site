@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="website">
+      <h1>Ethan's Blog</h1>
+    </div>
+    <div class="create">
+      <a href="/create">
+        <p>Create Post <i class="fa-solid fa-plus"></i></p>
+      </a>
+    </div>
+    <% if (locals.blogs) { %> <% for( let i = blogs.length-1; i>-1; i-- ) { %>
+
+    <div class="post">
+      <div class="header">
+        <span class="title"><%=blogs[i].title%></span>
+        <span class="options">
+          <form action="/edit" method="POST">
+            <input type="hidden" name="id" value="<%= blogs[i].id %>" />
+            <button type="submit">
+              <i class="fa-regular fa-pen-to-square"></i>
+            </button>
+          </form>
+          <form action="/delete" method="POST">
+            <input type="hidden" name="id" value="<%= blogs[i].id %>" />
+            <button type="submit">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </form>
+        </span>
+      </div>
+      <p class="info">
+        <%=blogs[i].author%><span class="date"><%=blogs[i].date%></span>
+      </p>
+      <p><%=blogs[i].content%></p>
+    </div>
+    <% } %> <% } %>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/88feee3c78.js"
+    crossorigin="anonymous"
+  ></script>
+</html>
